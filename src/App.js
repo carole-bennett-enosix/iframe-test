@@ -1,44 +1,60 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 
-function App() {
-
-  function onComponentInit()
+class App extends Component{
+  
+  onComponentInit()
   {
     window.postMessage('A');
+    alert('a');
   }
-
-  function onBeforeCall()
+  
+  onBeforeCall()
   {
     window.postMessage('B');
+    alert('b')
   }
-
-  function onDataProcessed()
+  
+  onDataProcessed()
   {
     window.postMessage('C');
+    alert('c')
   }
-
-  function onAfterCall()
+  
+  onAfterCall()
   {
     window.postMessage('D');
+    alert('d')
   }
-
-  function onComponentDestruct()
+  
+  onComponentDestruct()
   {
     window.postMessage('E');
+    alert('e')
   }
 
+  render(){
   return (
     <div className="App">
         <p>
-          <button name="test1" onClick={onComponentInit()}>onComponentInit</button>&nbsp;
-          <button name="test2" onClick={onBeforeCall()}>onBeforeCall</button>&nbsp;
-          <button name="test3"onClick={onDataProcessed()}>onDataProcessed</button>&nbsp;
-          <button name="test4" onClick={onAfterCall()}>onAfterCall</button>&nbsp;
-          <button name="test5"onClick={onComponentDestruct()}>onComponentDestruct</button> &nbsp; 
+          <button name="test1" onClick={this.onComponentInit}>onComponentInit</button>&nbsp;
+          <button name="test2" onClick={this.onBeforeCall}>onBeforeCall</button>&nbsp;
+          <button name="test3"onClick={this.onDataProcessed}>onDataProcessed</button>&nbsp;
+          <button name="test4" onClick={this.onAfterCall}>onAfterCall</button>&nbsp;
+          <button name="test5"onClick={this.onComponentDestruct}>onComponentDestruct</button> &nbsp; 
         </p>
     </div>
   );
+  }
+
 }
+
+
+
+
+
+
+
+
 
 export default App;
