@@ -6,31 +6,26 @@ class App extends Component{
   onComponentInit()
   {
     window.parent.postMessage('A');
-    alert('a');
   }
   
   onBeforeCall()
   {
     window.parent.postMessage('B');
-    alert('b')
   }
   
   onDataProcessed()
   {
     window.parent.postMessage('C');
-    alert('c')
   }
   
   onAfterCall()
   {
     window.parent.postMessage('D');
-    alert('d')
   }
   
   onComponentDestruct()
   {
     window.parent.postMessage('E');
-    alert('e')
   }
 
   render(){
