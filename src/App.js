@@ -5,27 +5,27 @@ class App extends Component{
   
   onComponentInit()
   {
-    window.top.postMessage('A');
+    window.parent.postMessage('A');
   }
   
   onBeforeCall()
   {
-    window.top.postMessage('B');
+    window.parent.postMessage('B');
   }
   
   onDataProcessed()
   {
-    window.top.postMessage('C');
+    window.parent.postMessage('C');
   }
   
   onAfterCall()
   {
-    window.top.postMessage('D');
+    window.parent.postMessage('D');
   }
   
   onComponentDestruct()
   {
-    window.top.postMessage('E');
+    window.parent.postMessage('E');
   }
 
   render(){
