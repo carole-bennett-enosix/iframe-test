@@ -6,31 +6,51 @@ class App extends Component{
   onComponentInit()
   {
     window.parent.postMessage('A','*');
-    this.createEventListener();
+    window.addEventListener("message", 
+    function(event){
+      this.alert(event.data);
+    }
+  )
   }
   
   onBeforeCall()
   {
     window.parent.postMessage('B', '*');
-    this.createEventListener();
+    window.addEventListener("message", 
+    function(event){
+      this.alert(event.data);
+    }
+  )
   }
   
   onDataProcessed()
   {
     window.parent.postMessage('C','*');
-    this.createEventListener();
+    window.addEventListener("message", 
+    function(event){
+      this.alert(event.data);
+    }
+  )
   }
   
   onAfterCall()
   {
     window.parent.postMessage('D','*');
-    this.createEventListener();
+    window.addEventListener("message", 
+    function(event){
+      this.alert(event.data);
+    }
+  )
   }
   
   onComponentDestruct()
   {
     window.parent.postMessage('E','*');
-    this.createEventListener();
+    window.addEventListener("message", 
+    function(event){
+      this.alert(event.data);
+    }
+  )
   }
 
   createEventListener()
