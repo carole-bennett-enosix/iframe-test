@@ -53,15 +53,6 @@ class App extends Component{
   )
   }
 
-  createEventListener()
-  {
-    window.addEventListener("message", 
-        function(event){
-          this.alert(event.data);
-        }
-      )
-  }
-
   render(){
   return (
     <div className="App">
